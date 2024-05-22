@@ -2,12 +2,20 @@
 .container {
    max-width: 1200px;
    margin: 0 auto;
-   padding: 20px;
+   padding: 20px;   
+}
+
+.container_cars {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 18px;
+   justify-content: space-around;
 }
 
 h1 {
    font-size: 2.5rem;
-   color: #333;
+   color: #ffffff;
    text-align: center;
    margin-bottom: 30px;
    font-weight: bold;

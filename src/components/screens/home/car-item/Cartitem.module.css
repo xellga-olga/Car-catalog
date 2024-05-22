@@ -1,22 +1,19 @@
 .item {
-   display: flex;
-   flex-direction: column;
-   border: 1px solid #ccc;
    border-radius: 8px;
    overflow: hidden;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.502);
    transition: transform 0.3s ease, box-shadow 0.3s ease;
-   width: 300px;
+   width: 250px;
 }
 
 .item:hover {
    transform: scale(1.05);
-   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+   box-shadow: 0 8px 16px rgb(0, 0, 0);
 }
 
 .image {
    width: 100%;
-   height: 200px;
+   height: 150px;
    background-size: cover;
    background-position: center;
 }
@@ -27,14 +24,14 @@
 }
 
 .info h2 {
-   font-size: 1.5rem;
-   color: #333;
+   font-size: 16px;
+   color:#ccc;;
    margin-bottom: 10px;
 }
 
 .info p {
    font-size: 1.25rem;
-   color: #666;
+   color: #ffffff;
    margin-bottom: 16px;
 }
 
