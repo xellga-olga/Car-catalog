@@ -5,20 +5,22 @@ const CarForm = ({ setCars }) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
+  const [error, setError] = useState("");
 
   const createCar = (e) => {
     e.preventDefault();
 
-    // Add new car
-    setCars((prev) => [
-      { id: prev.length + 1, name, price, image },
-      ...prev,
-    ]);
+    if (price < 1000) {
+      setError("Price must be at least 1000 and cannot be negative.");
+      return;
+    }
 
-    // Clear input
+    setCars((prev) => [{ id: prev.length + 1, name, price, image }, ...prev]);
+
     setName("");
     setPrice("");
     setImage("");
+    setError("");
   };
 
   return (
@@ -35,6 +37,7 @@ const CarForm = ({ setCars }) => {
         placeholder="Price"
         onChange={(e) => setPrice(e.target.value)}
         value={price}
+        min="1000"
       />
       <input
         className={styles.input}
@@ -42,6 +45,7 @@ const CarForm = ({ setCars }) => {
         onChange={(e) => setImage(e.target.value)}
         value={image}
       />
+      {error && <p className={styles.error}>{error}</p>}
       <button className={styles.button} type="submit">
         Create
       </button>

@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 import styles from "./Cartitem.module.css";
 
 function CarItem({ car }) {
@@ -12,12 +13,13 @@ function CarItem({ car }) {
       />
       <div className={styles.info}>
         <h2>{car.name}</h2>
-        <p>${car.price}</p>
-        <button>Read more</button>
+        <p>${car.price.toLocaleString()}</p>
+        <Link to={`/car/${car.id}`}>
+          <button>Read more</button>
+        </Link>
       </div>
     </div>
   );
 }
 
 export default CarItem;
- 
